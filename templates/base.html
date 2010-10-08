@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml-trainsitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+	<title> {%block titulo%}Prosa{% endblock %}</title>
+	
+	{% block meta %}
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="pt-br" />
+		<meta name="keywords" content="Python, Django, Prosa" />
+		<meta name="description" content="Esse Blog é do Projeto de Sensibilização Ambiental - PROSA" />
+	{% endblock %}
+
+	{% block feeds %}
+		<link rel="alternate" type="application/rss+xml" title="Ultimos Artigos do Blog do Prosa" href="/rss/ultimos/" />
+	{% endblock feeds%}
+	
+	{% block style %}
+		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}layout.css" />
+	{% endblock style %}
+
+	{% block scripts %}
+	{% endblock scripts %}
+</head>
+
+<body>
+  <div id="tudo">
+    <div id="topo">
+	{% block topo %}
+	  <div id="foto">&nbsp;</div>
+	    Blog do Prosa
+	{% endblock topo %}
+    </div>
+
+    <div id="menu">
+	{% block menu %}
+	  {% spaceless %}
+	    <ul>
+		<li><a href="/">Pagina Inicial</a></li>
+		<li><a href="/sobre-o-projeto/">Sobre o Projeto</a></li>
+		<li><a href="{% url views.contato %}">Contato</a></li>
+	    </ul>
+	  {% endspaceless %}
+	{% endblock menu %}
+    </div>
+
+	<h1> {% block h1 %} {% endblock %}</h1>
+    <div class="corpo">
+	{% block conteudo %} {% endblock %}
+    </div>
+
+	{% include "rodape.html" %}
+</body>
+
+</html>

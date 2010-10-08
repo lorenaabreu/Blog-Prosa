@@ -1,0 +1,11 @@
+﻿{% extends "base.html" %}
+
+{% block titulo %}Comentário enviado! - {{ block.super }} {% endblock %}
+
+{% block conteudo %}
+<h2>Comentário Enviado com Sucesso!</h2>
+<p> Obrigada por enviar seu comentário, logo mais olharei!</p>
+
+<p><a href="/"> Clique aqui para voltar ao blog!</a></p>
+
+{% endblock %}

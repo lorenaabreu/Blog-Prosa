@@ -1,0 +1,14 @@
+﻿{% extends "base.html" %}
+
+	{% block conteudo %}
+		<img src="{{ MEDIA_URL }}foto.jpg" />
+		{% for artigo in latest %}
+			<div class="artigo">
+		 	  <a href="{% url blog.views.artigo artigo_id=artigo.id%}"><h2>{{ artigo.titulo }}</h2></a>
+			  <div class="conteudo">
+			    Publicado em {{ artigo.publicacao }} <br />
+			    {{ artigo.conteudo }}
+			  </div>
+			</div>
+		{% endfor %}
+	{% endblock %}
